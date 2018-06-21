@@ -31,6 +31,11 @@ from ..core.settings import Settings
 from ..core.language import get_language
 from ..map_geo_admin.layers import searchable_layers
 
+# QGIS 3.0 fix
+import sys
+import qgis
+sys.modules['qgsfilterlineedit'] = qgis.gui
+
 DialogUi, _ = loadUiType(os.path.join(os.path.dirname(__file__), '../ui/config.ui'))
 
 
